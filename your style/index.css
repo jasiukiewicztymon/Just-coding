@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  font-family: 'Ubuntu', sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body h1 {
+  position: absolute;
+  top: 50px;
+  font-size: 40px;
+}
+
+body img {
+  width: 30%;
+  position: absolute;
+  top: 40px;
+}
+
+body #label_font {
+  position: absolute;
+  top: 250px;
+  font-size: 25px;
+  -webkit-transform: translate(-225%, 0%);
+          transform: translate(-225%, 0%);
+}
+
+body #font_choice {
+  position: absolute;
+  top: 300px;
+  -webkit-transform: translate(-125%, 0%);
+          transform: translate(-125%, 0%);
+  border: none;
+}
+
+body #label_color {
+  position: absolute;
+  top: 350px;
+  font-size: 25px;
+  -webkit-transform: translate(-190%, 0%);
+          transform: translate(-190%, 0%);
+}
+
+body #color_font {
+  position: absolute;
+  top: 400px;
+  -webkit-transform: translate(-275%, 0%);
+          transform: translate(-275%, 0%);
+  border: none;
+}
+
+body #label_background {
+  position: absolute;
+  top: 460px;
+  font-size: 25px;
+  -webkit-transform: translate(-65%, 0%);
+          transform: translate(-65%, 0%);
+}
+
+body #color_background {
+  position: absolute;
+  top: 510px;
+  -webkit-transform: translate(-275%, 0%);
+          transform: translate(-275%, 0%);
+  border: none;
+}
+
+body #submit {
+  position: absolute;
+  border-radius: 15px;
+  background: #fff;
+  border: none;
+  top: 590px;
+  padding: 10px;
+  font-size: 25px;
+}
+/*# sourceMappingURL=index.css.map */
