@@ -1,0 +1,53 @@
+$menu-font: 'Montserrat', sans-serif
+
+body 
+    margin: 0
+    padding: 0
+    nav
+        top: 0
+        left: 0
+        position: absolute
+        width: 100%
+        height: 150px
+        ul
+            list-style-type: none
+            margin: 0
+            padding: 0
+            overflow: hidden
+            display: flex
+            justify-content: center
+            align-content: center
+            li 
+                padding: 4.5vw
+                a
+                    display: block
+                    text-decoration: none
+                    font-size: 2vw
+                    font-family: $menu-font
+                    text-transform: uppercase
+                    color: #000
+                    transition: .5s
+                    &:hover
+                        transform: translate(0%, -35%)
+                #menu-selected
+                    display: block
+                    text-decoration: none
+                    font-size: 2vw
+                    font-family: $menu-font
+                    text-transform: uppercase
+                    color: #000
+                    transition: .5s
+                    &::after
+                        z-index: -1 
+                        background: #662f32
+                        content: ''
+                        position: absolute
+                        top: -5vw
+                        left: -1.75vw    
+                        height: 0vw
+                        width: 10vw
+                        transition: .5s
+                    &:hover
+                        color: #fff
+                        &::after
+                            height: 11vw

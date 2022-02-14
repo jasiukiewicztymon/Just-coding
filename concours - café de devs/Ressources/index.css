@@ -9,7 +9,6 @@ body nav {
   position: absolute;
   width: 100%;
   height: 150px;
-  background: red;
 }
 
 body nav ul {
@@ -36,5 +35,46 @@ body nav ul li a {
   text-decoration: none;
   font-size: 2vw;
   font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  color: #000;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+body nav ul li a:hover {
+  -webkit-transform: translate(0%, -35%);
+          transform: translate(0%, -35%);
+}
+
+body nav ul li #menu-selected {
+  display: block;
+  text-decoration: none;
+  font-size: 2vw;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  color: #000;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+body nav ul li #menu-selected::after {
+  z-index: -1;
+  background: #662f32;
+  content: '';
+  position: absolute;
+  top: -5vw;
+  left: -1.75vw;
+  height: 0vw;
+  width: 10vw;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+body nav ul li #menu-selected:hover {
+  color: #fff;
+}
+
+body nav ul li #menu-selected:hover::after {
+  height: 11vw;
 }
 /*# sourceMappingURL=index.css.map */
