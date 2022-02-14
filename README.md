@@ -1,2 +1,3 @@
 # Just-coding
-Just my code
+
+Here you can find some cool code that I do for fun or there isn't category for it...
