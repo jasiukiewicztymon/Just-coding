@@ -1,6 +1,14 @@
 body {
   margin: 0;
   padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 body nav {
@@ -76,5 +84,16 @@ body nav ul li #menu-selected:hover {
 
 body nav ul li #menu-selected:hover::after {
   height: 11vw;
+}
+
+body #title-box {
+  position: absolute;
+  top: 11vw;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2vw;
+}
+
+body #title-box b {
+  color: #662f32;
 }
 /*# sourceMappingURL=index.css.map */
