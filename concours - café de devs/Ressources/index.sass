@@ -1,6 +1,15 @@
 $menu-font: 'Montserrat', sans-serif
+$title-font: 'Roboto', sans-serif
+$title-font2: 'Roboto Mono', monospace
+
+html
+    scroll-snap-type: y mandatory
 
 body 
+    &::-webkit-scrollbar 
+        display: none
+
+
     margin: 0
     padding: 0
     display: flex
@@ -56,8 +65,30 @@ body
                             height: 11vw
     #title-box
         position: absolute
-        top: 11vw
-        font-family: $menu-font
-        font-size: 2vw
+        top: 13.5vw
+        font-family: $title-font2
+        span
+            letter-spacing: -0.05em
+            font-weight: 900
+            -webkit-transform: scaleX(0.9)
+            transform: scaleX(0.9)
+            display: inline-block
+            font-size: 7vw
+            &::first-letter
+                font-size: 8vw
+        #ts1
+            margin-left: 6.3vw
+        #ts2
+            margin-left: -0.7vw
         b
+            font-family: $title-font
+            font-size: 8vw
             color: #662f32
+
+    #slider-box
+        top: 33.5vw
+        position: absolute
+        width: 100%
+        height: 100%
+        #slider-box1
+            width: 100%
