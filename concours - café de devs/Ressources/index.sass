@@ -68,21 +68,26 @@ body
         top: 9.5vw
         font-family: $title-font2
         span
-            letter-spacing: -0.05em
+            letter-spacing: -0.07em
             font-weight: 900
             -webkit-transform: scaleX(0.9)
             transform: scaleX(0.9)
             display: inline-block
-            font-size: 8vw
+            font-size: 10vw
             &::first-letter
-                font-size: 10vw
+                font-size: 11vw
         #ts1
-            margin-left: 6.3vw
+            margin-left: 7.3vw
+            &::first-letter
+                margin-right: 0.5vw
+            span
+                -webkit-transform: scaleX(1.3) !important
+                transform: scaleX(1.3) translate(-15%, 0%) !important 
         #ts2
-            margin-left: -0.7vw
+            margin-left: -1vw
         b
             font-family: $title-font
-            font-size: 9vw
+            font-size: 11vw
             color: #662f32
 
     #slider-box
@@ -140,7 +145,7 @@ body
                 background: #645955
                 left: 0
                 position: relative
-                top: -1.3vw
+                margin-top: -0.3vw
                 a
                     top: 0vw
                     text-align: center
@@ -160,3 +165,54 @@ body
         #l-box
             position: absolute
             left: 3vw
+
+    footer
+        bottom: -300vh
+        left: 0px
+        position: absolute   
+        height: 15vh
+        width: 100%
+        margin-top: 5vh
+        border-top: 2px solid #000
+        a
+            font-family: Arial, Helvetica, sans-serif
+            position: absolute
+            bottom: 32px
+            left: 32px
+            font-size: 16px
+        #logo
+            height: 16px
+            width: auto
+            left: 105px
+            position: absolute
+            bottom: 32px
+        #fb 
+            position: absolute
+            right: 128px
+            bottom: 32px
+            object-fit: none
+            width: 32px
+            height: 32px
+            object-position: top left
+            &:hover
+                object-position: 0px -32px 
+        #t
+            position: absolute
+            right: 80px
+            bottom: 32px
+            object-fit: none
+            width: 32px
+            height: 32px
+            object-position: -32px 0px
+            &:hover
+                object-position: -32px -32px 
+        #gplus
+            position: absolute
+            right: 32px
+            bottom: 32px
+            object-fit: none
+            width: 32px
+            height: 32px
+            object-position: -64px 0px
+            &:hover
+                object-position: -64px -32px 

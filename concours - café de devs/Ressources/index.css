@@ -102,29 +102,38 @@ body #title-box {
 }
 
 body #title-box span {
-  letter-spacing: -0.05em;
+  letter-spacing: -0.07em;
   font-weight: 900;
   -webkit-transform: scaleX(0.9);
   transform: scaleX(0.9);
   display: inline-block;
-  font-size: 8vw;
-}
-
-body #title-box span::first-letter {
   font-size: 10vw;
 }
 
+body #title-box span::first-letter {
+  font-size: 11vw;
+}
+
 body #title-box #ts1 {
-  margin-left: 6.3vw;
+  margin-left: 7.3vw;
+}
+
+body #title-box #ts1::first-letter {
+  margin-right: 0.5vw;
+}
+
+body #title-box #ts1 span {
+  -webkit-transform: scaleX(1.3) !important;
+  transform: scaleX(1.3) translate(-15%, 0%) !important;
 }
 
 body #title-box #ts2 {
-  margin-left: -0.7vw;
+  margin-left: -1vw;
 }
 
 body #title-box b {
   font-family: "Roboto", sans-serif;
-  font-size: 9vw;
+  font-size: 11vw;
   color: #662f32;
 }
 
@@ -212,7 +221,7 @@ body #small-box .small div {
   background: #645955;
   left: 0;
   position: relative;
-  top: -1.3vw;
+  margin-top: -0.3vw;
 }
 
 body #small-box .small div a {
@@ -242,5 +251,82 @@ body #small-box #r-box {
 body #small-box #l-box {
   position: absolute;
   left: 3vw;
+}
+
+body footer {
+  bottom: -300vh;
+  left: 0px;
+  position: absolute;
+  height: 15vh;
+  width: 100%;
+  margin-top: 5vh;
+  border-top: 2px solid #000;
+}
+
+body footer a {
+  font-family: Arial, Helvetica, sans-serif;
+  position: absolute;
+  bottom: 32px;
+  left: 32px;
+  font-size: 16px;
+}
+
+body footer #logo {
+  height: 16px;
+  width: auto;
+  left: 105px;
+  position: absolute;
+  bottom: 32px;
+}
+
+body footer #fb {
+  position: absolute;
+  right: 128px;
+  bottom: 32px;
+  -o-object-fit: none;
+     object-fit: none;
+  width: 32px;
+  height: 32px;
+  -o-object-position: top left;
+     object-position: top left;
+}
+
+body footer #fb:hover {
+  -o-object-position: 0px -32px;
+     object-position: 0px -32px;
+}
+
+body footer #t {
+  position: absolute;
+  right: 80px;
+  bottom: 32px;
+  -o-object-fit: none;
+     object-fit: none;
+  width: 32px;
+  height: 32px;
+  -o-object-position: -32px 0px;
+     object-position: -32px 0px;
+}
+
+body footer #t:hover {
+  -o-object-position: -32px -32px;
+     object-position: -32px -32px;
+}
+
+body footer #gplus {
+  position: absolute;
+  right: 32px;
+  bottom: 32px;
+  -o-object-fit: none;
+     object-fit: none;
+  width: 32px;
+  height: 32px;
+  -o-object-position: -64px 0px;
+     object-position: -64px 0px;
+}
+
+body footer #gplus:hover {
+  -o-object-position: -64px -32px;
+     object-position: -64px -32px;
 }
 /*# sourceMappingURL=index.css.map */
