@@ -2,10 +2,16 @@ window.addEventListener("scroll", () => {
     const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
     const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
     const slidebox = document.getElementById("slider-box");
+    const smallbox = document.getElementById("small-box");
     if (slidebox.getBoundingClientRect().top > vh / 100 * 50) 
         slidebox.style.opacity = 0;
     else 
         slidebox.style.opacity = 1;
+
+    if (smallbox.getBoundingClientRect().top > vh / 100 * 75) 
+        smallbox.style.opacity = 0;
+    else 
+        smallbox.style.opacity = 1;
 })
 
 setInterval(()=> {
