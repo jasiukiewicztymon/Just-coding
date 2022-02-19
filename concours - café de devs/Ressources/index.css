@@ -21,6 +21,15 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+body p {
+  text-align: justify;
+}
+
+body h3 {
+  text-align: justify;
+  margin-bottom: 2vw;
+}
+
 body nav {
   top: 0;
   left: 0;
@@ -275,7 +284,7 @@ body #info-box #l-info {
   position: absolute;
   top: 0;
   left: 0;
-  width: 30%;
+  width: 28%;
   margin-left: 3vw;
 }
 
@@ -287,11 +296,11 @@ body #info-box #l-info p::before {
   content: url("./assets/img/arrow.png");
   position: absolute;
   left: -1vw;
-  margin-top: -0.25vw;
+  margin-top: -0.5vw;
   width: 2vw;
   height: 2vw;
-  -webkit-transform: scale(1.5);
-          transform: scale(1.5);
+  -webkit-transform: scale(1.75);
+          transform: scale(1.75);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -325,7 +334,7 @@ body #info-box a::after {
 body #info-box #c-info {
   position: absolute;
   top: 0;
-  width: 30%;
+  width: 28%;
 }
 
 body #info-box #c-info p {
@@ -336,7 +345,7 @@ body #info-box #r-info {
   position: absolute;
   top: 0;
   right: 0;
-  width: 30%;
+  width: 28%;
   margin-right: 3vw;
 }
 
@@ -348,7 +357,7 @@ body #info-box footer {
   left: 0px;
   position: relative;
   height: 100px;
-  margin-top: 170vw;
+  margin-top: 100vw;
   width: 100%;
   border-top: 2px solid #000;
 }
@@ -518,13 +527,13 @@ body #info-box footer #gplus:hover {
     font-size: 3vw;
   }
   body #info-box #l-info p::before {
-    margin-right: 2vw;
-    margin-top: 0.25vw;
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    margin-left: -1vw;
+    margin-top: 0.5vw;
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
   }
   body #info-box footer {
-    margin-top: 250vw !important;
+    margin-top: 150vw !important;
   }
 }
 /*# sourceMappingURL=index.css.map */
