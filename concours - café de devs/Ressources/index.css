@@ -1,9 +1,10 @@
-html {
+@tailwind base {}@tailwind components {}@tailwind utilities {}html {
   -ms-scroll-snap-type: y mandatory;
       scroll-snap-type: y mandatory;
 }
 
 body {
+  color: #000;
   margin: 0;
   padding: 0;
   display: -webkit-box;
@@ -59,6 +60,7 @@ body nav ul li a {
 }
 
 body nav ul li a:hover {
+  color: #000;
   -webkit-transform: translate(0%, -35%);
           transform: translate(0%, -35%);
 }
@@ -224,7 +226,7 @@ body #small-box .small div {
   margin-top: -0.3vw;
 }
 
-body #small-box .small div a {
+body #small-box .small div p {
   top: 0vw;
   text-align: center;
   position: absolute;
@@ -253,25 +255,113 @@ body #small-box #l-box {
   left: 3vw;
 }
 
-body footer {
-  bottom: -300vh;
-  left: 0px;
+body #info-box {
   position: absolute;
-  height: 15vh;
+  top: 140vw;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: 100%;
-  margin-top: 5vh;
+  font-size: 2vw;
+}
+
+body #info-box #l-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30%;
+  margin-left: 3vw;
+}
+
+body #info-box #l-info p {
+  margin-left: 3vw;
+}
+
+body #info-box #l-info p::before {
+  content: url("./assets/img/arrow.png");
+  position: absolute;
+  left: -1vw;
+  margin-top: -0.25vw;
+  width: 2vw;
+  height: 2vw;
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body #info-box h3 {
+  font-size: 2vw;
+  color: #662f32;
+}
+
+body #info-box a {
+  text-decoration: none;
+  position: absolute;
+  color: #fff;
+  font-size: 2vw;
+  margin-left: 1vw;
+}
+
+body #info-box a::after {
+  content: '';
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #662f32;
+  height: 6vw;
+  width: 13vw;
+  margin-top: -4.5vw;
+  margin-left: -1.75vw;
+}
+
+body #info-box #c-info {
+  position: absolute;
+  top: 0;
+  width: 30%;
+}
+
+body #info-box #c-info p {
+  margin-bottom: 3vw;
+}
+
+body #info-box #r-info {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30%;
+  margin-right: 3vw;
+}
+
+body #info-box #r-info p {
+  margin-bottom: 3vw;
+}
+
+body #info-box footer {
+  left: 0px;
+  position: relative;
+  height: 100px;
+  margin-top: 170vw;
+  width: 100%;
   border-top: 2px solid #000;
 }
 
-body footer a {
+body #info-box footer p {
   font-family: Arial, Helvetica, sans-serif;
   position: absolute;
-  bottom: 24px;
+  bottom: 5px;
   left: 32px;
   font-size: 16px;
 }
 
-body footer #logo {
+body #info-box footer #logo {
   height: 16px;
   width: auto;
   left: 105px;
@@ -279,7 +369,7 @@ body footer #logo {
   bottom: 24px;
 }
 
-body footer #fb {
+body #info-box footer #fb {
   position: absolute;
   right: 128px;
   bottom: 24px;
@@ -291,12 +381,12 @@ body footer #fb {
      object-position: top left;
 }
 
-body footer #fb:hover {
+body #info-box footer #fb:hover {
   -o-object-position: 0px -32px;
      object-position: 0px -32px;
 }
 
-body footer #t {
+body #info-box footer #t {
   position: absolute;
   right: 80px;
   bottom: 24px;
@@ -308,12 +398,12 @@ body footer #t {
      object-position: -32px 0px;
 }
 
-body footer #t:hover {
+body #info-box footer #t:hover {
   -o-object-position: -32px -32px;
      object-position: -32px -32px;
 }
 
-body footer #gplus {
+body #info-box footer #gplus {
   position: absolute;
   right: 32px;
   bottom: 24px;
@@ -325,8 +415,116 @@ body footer #gplus {
      object-position: -64px 0px;
 }
 
-body footer #gplus:hover {
+body #info-box footer #gplus:hover {
   -o-object-position: -64px -32px;
      object-position: -64px -32px;
+}
+
+@media only screen and (max-width: 768px) {
+  body #small-box {
+    top: 85vw;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    height: 110vh;
+    opacity: 0;
+    -webkit-transition: .5s ease-in;
+    transition: .5s ease-in;
+  }
+  body #small-box .small {
+    color: #fff;
+    height: 60vw;
+    background: #662f32;
+    margin-top: 4vw;
+    text-align: left;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
+  body #small-box .small img {
+    position: absolute;
+    width: 70%;
+    bottom: 10vw;
+  }
+  body #small-box .small .img {
+    width: 100%;
+    -o-object-position: center;
+       object-position: center;
+    height: 45vw;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  body #small-box .small h2 {
+    margin: 1.5vw;
+    font-family: "Montserrat", sans-serif;
+    font-size: 2vw;
+    text-transform: uppercase;
+  }
+  body #small-box .small div {
+    width: 100%;
+    height: 15vw;
+    background: #645955;
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    margin-top: -0.3vw;
+  }
+  body #small-box .small div p {
+    top: 0vw;
+    text-align: center;
+    position: absolute;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.7vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 2vw;
+  }
+  body #small-box .small div img {
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    width: 6vw;
+  }
+  body #small-box #r-box {
+    position: absolute;
+    width: 100%;
+    left: 0;
+  }
+  body #small-box #l-box {
+    margin-top: 135vw;
+    position: absolute;
+    width: 100%;
+    left: 0;
+  }
+  body #small-box #c-box {
+    margin-top: 70vw;
+    position: absolute;
+    width: 100%;
+    left: 0;
+  }
+  body #info-box {
+    top: 290vw !important;
+  }
+  body #info-box p {
+    font-size: 2.5vw;
+  }
+  body #info-box h3 {
+    font-size: 3vw;
+  }
+  body #info-box #l-info p::before {
+    margin-right: 2vw;
+    margin-top: 0.25vw;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  body #info-box footer {
+    margin-top: 250vw !important;
+  }
 }
 /*# sourceMappingURL=index.css.map */
