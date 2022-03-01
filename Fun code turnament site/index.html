@@ -15,15 +15,19 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <nav>
-        <ul>
+<body class="grid grid-cols-12">
+    <nav class="col-span-12">
+        <ul class="grid grid-cols-6 w-[75vw] ml-[5vw] mt-[1vw] text-[2vw]">
             <li><a href="#">Accueil</a></li>
             <li><a href="#">Calendrier</a></li>
             <li><a href="#">Podium</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
-        <button id="connection_btn">Connexion</button>
+        <button id="connection_btn" class="top-[1vw] right-[1vw] absolute text-[1.5vw] p-[0.7vw] rounded-[1vw] bg-blue-600 text-white">Connexion</button>
+        <div id="theme-switcher" class="absolute right-[12.5vw] top-[1vw] mt-[0.5vw]">
+            <span id="dark-theme">
+            <span id="light-theme">
+        </div>
     </nav>
     <article>
         <section class="faq">
@@ -39,20 +43,22 @@
             <button id="calendar_btn">Calendrier</button>
         </section>
     </article>
-    <footer>
-        <section class="youtube">
-            <h2>Rejoignez nous sur Youtube : </h2>
-            <a href="#" target="_blank"><img src="./img/youtube.png" alt="Youtube" class="icon"></a>
+    <footer class="flex absolute bottom-[2vw] grid grid-cols-5 w-[50%] l-[50%] transform translate-x-[50%]">
+        <section class="youtube col-span-1 col-start-1">
+            <h2 class="text-[1.1vw] mb-[1.5vw]">Rejoignez nous sur Youtube : </h2>
+            <a href="#" target="_blank"><img src="./img/youtube.png" alt="Youtube" class="icon" width="50px"></a>
         </section>
-        <section class="discord">
-            <h2>Rejoignez nous sur Discord : </h2>
-            <a href="#" target="_blank"><img src="./img/discord.svg" alt="Discord" class="icon"></a>
+        <section class="discord col-span-1 col-start-2">
+            <h2 class="text-[1.1vw] mb-[1.5vw]">Rejoignez nous sur Discord : </h2>
+            <a href="#" target="_blank"><img src="./img/discord.svg" alt="Discord" class="icon" width="50px"></a>
         </section>
-        <section class="github">
-            <h2>Front-end : </h2>
-            <a href="#" target="_blank"><img src="./img/github.png" alt="GitHub" class="icon"></a>
-            <h2>Back-end : </h2>
-            <a href="#" target="_blank"><img src="./img/github.png" alt="GitHub" class="icon"></a>
+        <section class="github col-span-1 col-start-4">
+            <h2 class="text-[1.1vw] mb-[1.5vw]">Front-end : </h2>
+            <a href="#" target="_blank"><img src="./img/github.png" alt="GitHub" class="icon" width="50px"></a>
+        </section>
+        <section class="github col-span-1 col-start-5">
+            <h2 class="text-[1.1vw] mb-[1.5vw]">Back-end : </h2>
+            <a href="#" target="_blank"><img src="./img/github.png" alt="GitHub" class="icon" width="50px"></a>
         </section>
     </footer>
 </body>
