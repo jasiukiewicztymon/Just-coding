@@ -1,0 +1,40 @@
+.none {
+  display: none;
+}
+
+body {
+  text-decoration: none;
+}
+
+body nav a {
+  -webkit-transition: .5s;
+  transition: .5s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-decoration: none;
+}
+
+body nav a:hover {
+  color: black;
+  -webkit-transform: translate(0%, -20%);
+          transform: translate(0%, -20%);
+}
+
+body nav #theme-switcher span {
+  width: 2.5vw;
+  height: 2.5vw;
+  background-size: cover;
+  display: inline-block;
+}
+
+body nav #theme-switcher #light-theme {
+  background-image: url("../img/sun.svg");
+  -webkit-filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+          filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+}
+
+body nav #theme-switcher #dark-theme {
+  background-image: url("../img/moon.svg");
+}
+/*# sourceMappingURL=index.css.map */

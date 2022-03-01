@@ -1,0 +1,33 @@
+.none {
+    display: none;
+}
+
+body {
+    text-decoration: none;
+    nav {
+        a {
+            transition: .5s;
+            display: flex;
+            text-decoration: none;
+            &:hover {
+                color: black;
+                transform: translate(0%, -20%);
+            }
+        }
+        #theme-switcher {
+            span {
+                width: 2.5vw;
+                height: 2.5vw;
+                background-size: cover;
+                display: inline-block;
+            }
+            #light-theme {
+                background-image: url("../img/sun.svg");
+                filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+            }
+            #dark-theme {
+                background-image: url("../img/moon.svg");
+            }
+        }
+    }
+}
