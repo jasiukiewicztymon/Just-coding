@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .none {
   display: none !important;
 }
@@ -8,6 +9,10 @@ b {
 
 body {
   text-decoration: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 body nav a {
@@ -44,8 +49,19 @@ body nav #theme-switcher #dark-theme {
 
 body #serverinfo {
   font-family: 'Open Sans', sans-serif;
-  -webkit-box-shadow: inset -1vw -1vw 1vw #d0d0d0, inset 1vw 1vw 1vw #f0f0f0;
-          box-shadow: inset -1vw -1vw 1vw #d0d0d0, inset 1vw 1vw 1vw #f0f0f0;
+  background: linear-gradient(145deg, #fafafa, #ffffff);
+  -webkit-box-shadow: 1vw 1vw 1vw #d0d0d0,
+ -1vw -1vw 1vw #f0f0f0;
+          box-shadow: 1vw 1vw 1vw #d0d0d0,
+ -1vw -1vw 1vw #f0f0f0;
+}
+
+body #serverinfo #activemembers::after {
+  content: ' 🟢';
+}
+
+body #serverinfo #totalmembers::after {
+  content: ' ✔️';
 }
 
 body #copyrights {
@@ -54,5 +70,23 @@ body #copyrights {
   right: 2vw;
   font-size: 1vw;
   bottom: 1vw;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3169cf;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #164ec9;
 }
 /*# sourceMappingURL=index.css.map */
