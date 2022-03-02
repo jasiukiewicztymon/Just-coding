@@ -28,7 +28,7 @@
             <li><a href="#">🏆 Podium</a></li>
             <li><a href="#">📞 Contact</a></li>
         </ul>
-        <button id="connection_btn" class="top-[2.5vw] right-[1vw] absolute text-[1.5vw] p-[0.7vw] rounded-[1vw] bg-blue-600 text-white">Connexion</button>
+        <button id="connection_btn" class="top-[2.5vw] hover:bg-blue-700 right-[1vw] absolute text-[1.5vw] p-[0.7vw] hover:scale-[115%] transition ease-in-out rounded-[1vw] bg-blue-600 text-white">Connexion</button>
         <div id="theme-switcher" class="absolute right-[12.5vw] top-[2.5vw] mt-[0.5vw] mr-[3vw]">
             <b id="dark-theme" class="absolute"></b>
             <b id="light-theme" class="absolute none"></b>
@@ -37,17 +37,18 @@
     <article class="relative ml-[5vw] w-[90vw] top-[50%] transform -translate-y-[50%]">
         <section class="faq w-[45vw]">
             <h1 class="text-[3vw] mb-[1vw]">C'est quoi notre but ?</h1>
-            <p class="text-[1.7vw] mb-[1vw] text-justify">Réunir une communauté de codeur française et créer des concours web et d'algorithme !</p>
+            <p class="text-[1.7vw] mb-[5vw] text-justify">Réunir une communauté de codeur française et créer des concours web et d'algorithme !</p>
         </section>
         <section class="discord w-[45vw]">
-            <p class="text-[1.2vw] mb-[1vw] text-justify">Vous cherchez une communauté active et sympa, cliquez sur le bouton ci-dessous : </p>
-            <button id="discord_btn" class="mb-[1.5vw] bg-blue-600 text-white text-[1.3vw] p-[0.7vw] rounded-[0.7vw]">Discord</button>
+            <h1 class="mb-[1vw] text-[2vw] text-center">Retrouvez nous ici</h1>
+            <p class="text-[1.2vw] mb-[1vw] text-justify text-left">Vous cherchez une communauté active et sympa, cliquez sur le bouton ci-dessous : </p>
+            <button id="discord_btn" class="ml-[50%] -translate-x-[50%] transition ease-in-out hover:scale-[115%] hover:bg-blue-700 mb-[1.5vw] w-[10vw] bg-blue-600 text-white text-[1.3vw] p-[0.7vw] rounded-[0.7vw]">Discord</button>
         </section>
         <section class="calendrier w-[45vw]">
             <p class="text-[1.2vw] mb-[1vw] text-justify">Si vous voulez être prêt pour les événements à venir veuillez voir notre calendrier :</p>
-            <button id="calendar_btn" class="bg-blue-600 text-[1.3vw] text-white p-[0.7vw] rounded-[0.7vw]">Calendrier</button>
+            <button id="calendar_btn" class="ml-[50%] -translate-x-[50%] transition ease-in-out hover:scale-[115%] bg-red-600 hover:bg-red-700 w-[10vw] text-[1.3vw] text-white p-[0.7vw] rounded-[0.7vw]">Calendrier</button>
         </section>
-        <div id="serverinfo" class="absolute right-[5vw] mr-[5vw] p-[3vw] rounded-[1vw] text-[1.25vw] w-[30%] top-[25%] transform -translate-y-[50%]">
+        <div id="serverinfo" class="hover:scale-[105%] transition ease-in-out absolute right-[10vw] p-[3vw] rounded-[1vw] text-[1.25vw] w-[30%] top-[35%] -translate-y-[50%]">
             <h1>Informations sur notre Disocrd</h1>
             <h2 id="titletotal">Nombre de membre : </h2>
             <p id="totalmembers"></p>
@@ -55,7 +56,7 @@
             <p id="activemembers"></p>
         </div>
     </article>
-    <footer class="relative bottom-[2.5vw] grid grid-cols-5 w-[70vw] l-[50%] transform translate-x-[10%] mt-[35vw]">
+    <footer class="relative bottom-[2.5vw] grid grid-cols-5 w-[70vw] l-[50%] transform translate-x-[10%] mt-[40vw]">
         <section class="youtube col-span-1 col-start-1">
             <h2 class="text-[1.1vw] mb-[1.5vw]">Notre Youtube : </h2>
             <a href="#" target="_blank"><img src="./img/youtube.png" alt="Youtube" class="icon" width="50vw"></a>
