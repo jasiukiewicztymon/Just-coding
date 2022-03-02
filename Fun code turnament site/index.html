@@ -21,59 +21,59 @@
     <script src="./javascript/index.js"></script>
 </head>
 <body class="grid grid-cols-12">
-    <nav class="top-0 left-0 flex relative z-[1] col-span-12 bg-white h-[100%] w-[97.5vw] mb-[3vw]">
-        <ul class="grid grid-cols-6 w-[85vw] ml-[5vw] mt-[3vw] text-[2vw]">
+    <nav class="top-0 left-0 flex relative z-[1] col-span-12 bg-white h-[100%] w-[97.5vw] mb-[12.5vw] lg:mb-[10vw] lg:mb-[2vw]">
+        <ul class="grid grid-cols-4 lg:grid-cols-6 w-[100vw] lg:w-[85vw] ml-[5vw] mt-[3vw] text-[3vw] lg:text-[2vw]">
             <li><a href="#">🏠 Accueil</a></li>
             <li><a href="#">🗓 Calendrier</a></li>
             <li><a href="#">🏆 Podium</a></li>
             <li><a href="#">📞 Contact</a></li>
         </ul>
-        <button id="connection_btn" class="top-[2.5vw] hover:bg-blue-700 right-[1vw] absolute text-[1.5vw] p-[0.7vw] hover:scale-[115%] transition ease-in-out rounded-[1vw] bg-blue-600 text-white">Connexion</button>
-        <div id="theme-switcher" class="absolute right-[12.5vw] top-[2.5vw] mt-[0.5vw] mr-[3vw]">
-            <b id="dark-theme" class="absolute"></b>
-            <b id="light-theme" class="absolute none"></b>
+        <button id="connection_btn" class="mt-[2vw] lg:mt-0 top-[10vw] left-[50%] -translate-x-[100%] lg:-translate-x-[0%] lg:left-auto lg:top-[2.5vw] hover:bg-blue-700 lg:right-[1vw] absolute text-[2.5vw] lg:text-[1.5vw] p-[0.7vw] hover:scale-[115%] transition ease-in-out rounded-[1vw] bg-blue-600 text-white">Connexion</button>
+        <div id="theme-switcher" class="top-[11vw] left-[55%] lg:left-auto lg:-translate-x-[0%] absolute lg:right-[12.5vw] lg:top-[2.5vw] mt-[2.5vw] lg:mt-[0.5vw] mr-[3vw]">
+            <span id="dark-theme" class="absolute"></span>
+            <span id="light-theme" class="absolute none"></span>
         </div>
     </nav>
     <article class="relative ml-[5vw] w-[90vw] top-[50%] transform -translate-y-[50%]">
-        <section class="faq w-[45vw]">
-            <h1 class="text-[3vw] mb-[1vw]">C'est quoi notre but ?</h1>
-            <p class="text-[1.7vw] mb-[5vw] text-justify">Réunir une communauté de codeur française et créer des concours web et d'algorithme !</p>
+        <section class="faq w-[45vw] left-[50%] translate-x-[50%] lg:-translate-x-[0%] lg:left-auto">
+            <h1 class="text-[3.5vw] lg:text-[3vw] mb-[1vw]">C'est quoi notre but ?</h1>
+            <p class="text-[2.2vw] lg:text-[1.7vw] mb-[5vw] text-justify">Réunir une communauté de codeur française et créer des concours web et d'algorithme !</p>
         </section>
-        <section class="discord w-[45vw]">
-            <h1 class="mb-[1vw] text-[2vw] text-center">Retrouvez nous ici</h1>
-            <p class="text-[1.2vw] mb-[1vw] text-justify text-left">Vous cherchez une communauté active et sympa, cliquez sur le bouton ci-dessous : </p>
-            <button id="discord_btn" class="ml-[50%] -translate-x-[50%] transition ease-in-out hover:scale-[115%] hover:bg-blue-700 mb-[1.5vw] w-[10vw] bg-blue-600 text-white text-[1.3vw] p-[0.7vw] rounded-[0.7vw]">Discord</button>
+        <section class="discord w-[45vw] left-[50%] translate-x-[50%] lg:-translate-x-[0%] lg:left-auto">
+            <h1 class="mb-[1vw] text-[4vw] lg:text-[2vw] text-center">Retrouvez nous ici</h1>
+            <p class="text-[2.2vw] lg:text-[1.2vw] mb-[2vw] lg:mb-[1vw] text-justify text-left">Vous cherchez une communauté active et sympa, cliquez sur le bouton ci-dessous : </p>
+            <button id="discord_btn" class="ml-[50%] -translate-x-[50%] transition ease-in-out hover:scale-[115%] hover:bg-blue-700 mb-[3vw] lg:mb-[1.5vw] lg:w-[10vw] bg-blue-600 text-white w-[20vw] text-[2.6vw] lg:text-[1.3vw] p-[0.7vw] rounded-[0.7vw]">Discord</button>
         </section>
-        <section class="calendrier w-[45vw]">
-            <p class="text-[1.2vw] mb-[1vw] text-justify">Si vous voulez être prêt pour les événements à venir veuillez voir notre calendrier :</p>
-            <button id="calendar_btn" class="ml-[50%] -translate-x-[50%] transition ease-in-out hover:scale-[115%] bg-red-600 hover:bg-red-700 w-[10vw] text-[1.3vw] text-white p-[0.7vw] rounded-[0.7vw]">Calendrier</button>
+        <section class="calendrier w-[45vw] left-[50%] translate-x-[50%] lg:-translate-x-[0%] lg:left-auto">
+            <p class="text-[2.2vw] lg:text-[1.2vw] mb-[2vw] lg:mb-[1vw] text-justify text-left">Si vous voulez être prêt pour les événements à venir veuillez voir notre calendrier :</p>
+            <button id="calendar_btn" class="ml-[50%] -translate-x-[50%] transition ease-in-out hover:scale-[115%] hover:bg-red-700 mb-[3vw] lg:mb-[1.5vw] lg:w-[10vw] bg-red-600 text-white w-[20vw] text-[2.6vw] lg:text-[1.3vw] p-[0.7vw] rounded-[0.7vw]">Calendrier</button>
         </section>
-        <div id="serverinfo" class="hover:scale-[105%] transition ease-in-out absolute right-[10vw] p-[3vw] rounded-[1vw] text-[1.25vw] w-[30%] top-[35%] -translate-y-[50%]">
-            <h1>Informations sur notre Disocrd</h1>
+        <div id="serverinfo" class="left-[50%] -translate-x-[50%] lg:-translate-x-[0%] lg:left-auto hover:scale-[105%] transition ease-in-out absolute right-[10vw] p-[3vw] rounded-[1vw] text-[2.5vw] lg:text-[1.25vw] w-[60%] lg:w-[30%] mt-[5vw] lg:mt-[0] lg:top-[35%] lg:-translate-y-[50%]">
+            <h1 class="mb-[1vw]">Informations sur notre Discord</h1>
             <h2 id="titletotal">Nombre de membre : </h2>
             <p id="totalmembers"></p>
             <h2 id="titleactive">Nombre de actifs : </h2>
             <p id="activemembers"></p>
         </div>
     </article>
-    <footer class="relative bottom-[2.5vw] grid grid-cols-5 w-[70vw] l-[50%] transform translate-x-[10%] mt-[40vw]">
+    <footer class="relative bottom-[2.5vw] grid grid-cols-5 w-[70vw] l-[50%] transform translate-x-[10%] mt-[100vw] lg:mt-[40vw]">
         <section class="youtube col-span-1 col-start-1">
-            <h2 class="text-[1.1vw] mb-[1.5vw]">Notre Youtube : </h2>
-            <a href="#" target="_blank"><img src="./img/youtube.png" alt="Youtube" class="icon" width="50vw"></a>
+            <h2 class="text-[2.2vw] lg:text-[1.1vw] mb-[1.5vw]">Notre Youtube : </h2>
+            <a href="#" target="_blank"><img src="./img/youtube.png" alt="Youtube" class="icon" width="40vw"></a>
         </section>
         <section class="discord col-span-1 col-start-2">
-            <h2 class="text-[1.1vw] mb-[1.5vw]">Notre Discord : </h2>
-            <a href="#" target="_blank"><img src="./img/discord.svg" alt="Discord" class="icon" width="50vw"></a>
+            <h2 class="text-[2.1vw] lg:text-[1.1vw] mb-[1.5vw]">Notre Discord : </h2>
+            <a href="#" target="_blank"><img src="./img/discord.svg" alt="Discord" class="icon" width="40vw"></a>
         </section>
         <section class="github col-span-1 col-start-4">
-            <h2 class="text-[1.1vw] mb-[1.5vw]">Front-end : </h2>
-            <a href="#" target="_blank"><img src="./img/github.png" alt="GitHub" class="icon" width="50vw"></a>
+            <h2 class="text-[2.2vw] lg:text-[1.1vw] mb-[1.5vw]">Front-end : </h2>
+            <a href="#" target="_blank"><img src="./img/github.png" alt="GitHub" class="icon" width="40vw"></a>
         </section>
         <section class="github col-span-1 col-start-5">
-            <h2 class="text-[1.1vw] mb-[1.5vw]">Back-end : </h2>
-            <a href="#" target="_blank"><img src="./img/github.png" alt="GitHub" class="icon" width="50vw"></a>
+            <h2 class="text-[2.2vw] lg:text-[1.1vw] mb-[1.5vw]">Back-end : </h2>
+            <a href="#" target="_blank"><img src="./img/github.png" alt="GitHub" class="icon" width="40vw"></a>
         </section>
     </footer>
-    <div id="copyrights" class="z-[100]">© - Fun Code Tournament</div>
+    <div id="copyrights" class="z-[100] text-[2vh] lg:text-[2vw]">© - Fun Code Tournament</div>
 </body>
 </html>
