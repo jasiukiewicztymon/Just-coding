@@ -1,5 +1,9 @@
 .none {
-  display: none;
+  display: none !important;
+}
+
+b {
+  font-weight: bolder !important;
 }
 
 body {
@@ -36,5 +40,19 @@ body nav #theme-switcher #light-theme {
 
 body nav #theme-switcher #dark-theme {
   background-image: url("../img/moon.svg");
+}
+
+body #serverinfo {
+  font-family: 'Open Sans', sans-serif;
+  -webkit-box-shadow: inset -1vw -1vw 1vw #d0d0d0, inset 1vw 1vw 1vw #f0f0f0;
+          box-shadow: inset -1vw -1vw 1vw #d0d0d0, inset 1vw 1vw 1vw #f0f0f0;
+}
+
+body #copyrights {
+  position: fixed;
+  color: rgba(0, 0, 0, 0.5);
+  right: 2vw;
+  font-size: 1vw;
+  bottom: 1vw;
 }
 /*# sourceMappingURL=index.css.map */

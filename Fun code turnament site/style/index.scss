@@ -1,5 +1,8 @@
 .none {
-    display: none;
+    display: none !important;
+}
+b {
+    font-weight: bolder !important;
 }
 
 body {
@@ -30,4 +33,17 @@ body {
             }
         }
     }
+    #serverinfo {
+        font-family: 'Open Sans', sans-serif;
+        box-shadow: inset -1vw -1vw 1vw #d0d0d0,
+                    inset 1vw 1vw 1vw #f0f0f0;
+    }
+    #copyrights {
+        position: fixed;
+        color: rgba(0, 0, 0, 0.5);
+        right: 2vw;
+        font-size: 1vw;
+        bottom: 1vw;
+    }
 }
+// responsible disgn applied for all mobiles disgn

@@ -6,60 +6,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fun Code Tournament - Index</title>
 
-    <!-- JavaScript -->    
-    <script src="./javascript/index.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
+
     <!-- CSS -->
     <link rel="stylesheet" href="./style/index.css">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- JavaScript -->    
+    <script src="./javascript/index.js"></script>
 </head>
 <body class="grid grid-cols-12">
-    <nav class="col-span-12">
-        <ul class="grid grid-cols-6 w-[75vw] ml-[5vw] mt-[1vw] text-[2vw]">
-            <li><a href="#">Accueil</a></li>
-            <li><a href="#">Calendrier</a></li>
-            <li><a href="#">Podium</a></li>
-            <li><a href="#">Contact</a></li>
+    <nav class="top-0 left-0 flex relative z-[1] col-span-12 bg-white h-[100%] w-[97.5vw] mb-[3vw]">
+        <ul class="grid grid-cols-6 w-[85vw] ml-[5vw] mt-[3vw] text-[2vw]">
+            <li><a href="#">🏠 Accueil</a></li>
+            <li><a href="#">🗓 Calendrier</a></li>
+            <li><a href="#">🏆 Podium</a></li>
+            <li><a href="#">📞 Contact</a></li>
         </ul>
-        <button id="connection_btn" class="top-[1vw] right-[1vw] absolute text-[1.5vw] p-[0.7vw] rounded-[1vw] bg-blue-600 text-white">Connexion</button>
-        <div id="theme-switcher" class="absolute right-[12.5vw] top-[1vw] mt-[0.5vw]">
-            <span id="dark-theme">
-            <span id="light-theme">
+        <button id="connection_btn" class="top-[2.5vw] right-[1vw] absolute text-[1.5vw] p-[0.7vw] rounded-[1vw] bg-blue-600 text-white">Connexion</button>
+        <div id="theme-switcher" class="absolute right-[12.5vw] top-[2.5vw] mt-[0.5vw] mr-[3vw]">
+            <b id="dark-theme" class="absolute"></b>
+            <b id="light-theme" class="absolute none"></b>
         </div>
     </nav>
-    <article>
-        <section class="faq">
-            <h1>C'est quoi notre but?</h1>
-            <p>Réunir une communauté de codeur française et créer des concours web et d'algorithme !</p>
+    <article class="relative ml-[5vw] w-[90vw] top-[50%] transform -translate-y-[50%]">
+        <section class="faq w-[45vw]">
+            <h1 class="text-[3vw] mb-[1vw]">C'est quoi notre but ?</h1>
+            <p class="text-[1.7vw] mb-[1vw] text-justify">Réunir une communauté de codeur française et créer des concours web et d'algorithme !</p>
         </section>
-        <section class="discord">
-            <p>Vous cherchez une communauté active et sympa, cliquez sur le bouton ci-dessous : </p>
-            <button id="discord_btn">Discord</button>
+        <section class="discord w-[45vw]">
+            <p class="text-[1.2vw] mb-[1vw] text-justify">Vous cherchez une communauté active et sympa, cliquez sur le bouton ci-dessous : </p>
+            <button id="discord_btn" class="mb-[1.5vw] bg-blue-600 text-white text-[1.3vw] p-[0.7vw] rounded-[0.7vw]">Discord</button>
         </section>
-        <section class="calendrier">
-            <p>Si vous voulez être prêt pour les événements à venir veuillez voir notre calendrier :</p>
-            <button id="calendar_btn">Calendrier</button>
+        <section class="calendrier w-[45vw]">
+            <p class="text-[1.2vw] mb-[1vw] text-justify">Si vous voulez être prêt pour les événements à venir veuillez voir notre calendrier :</p>
+            <button id="calendar_btn" class="bg-blue-600 text-[1.3vw] text-white p-[0.7vw] rounded-[0.7vw]">Calendrier</button>
         </section>
+        <div id="serverinfo" class="absolute right-[5vw] mr-[5vw] p-[3vw] rounded-[1vw] text-[1.25vw] w-[30%] top-[25%] transform -translate-y-[50%]">
+            <h1>Informations sur notre Disocrd</h1>
+            <h2 id="titletotal">Nombre de membre : </h2>
+            <p id="totalmembers"></p>
+            <h2 id="titleactive">Nombre de actifs : </h2>
+            <p id="activemembers"></p>
+        </div>
     </article>
-    <footer class="flex absolute bottom-[2vw] grid grid-cols-5 w-[50%] l-[50%] transform translate-x-[50%]">
+    <footer class="relative bottom-[2.5vw] grid grid-cols-5 w-[70vw] l-[50%] transform translate-x-[10%] mt-[35vw]">
         <section class="youtube col-span-1 col-start-1">
-            <h2 class="text-[1.1vw] mb-[1.5vw]">Rejoignez nous sur Youtube : </h2>
-            <a href="#" target="_blank"><img src="./img/youtube.png" alt="Youtube" class="icon" width="50px"></a>
+            <h2 class="text-[1.1vw] mb-[1.5vw]">Notre Youtube : </h2>
+            <a href="#" target="_blank"><img src="./img/youtube.png" alt="Youtube" class="icon" width="50vw"></a>
         </section>
         <section class="discord col-span-1 col-start-2">
-            <h2 class="text-[1.1vw] mb-[1.5vw]">Rejoignez nous sur Discord : </h2>
-            <a href="#" target="_blank"><img src="./img/discord.svg" alt="Discord" class="icon" width="50px"></a>
+            <h2 class="text-[1.1vw] mb-[1.5vw]">Notre Discord : </h2>
+            <a href="#" target="_blank"><img src="./img/discord.svg" alt="Discord" class="icon" width="50vw"></a>
         </section>
         <section class="github col-span-1 col-start-4">
             <h2 class="text-[1.1vw] mb-[1.5vw]">Front-end : </h2>
-            <a href="#" target="_blank"><img src="./img/github.png" alt="GitHub" class="icon" width="50px"></a>
+            <a href="#" target="_blank"><img src="./img/github.png" alt="GitHub" class="icon" width="50vw"></a>
         </section>
         <section class="github col-span-1 col-start-5">
             <h2 class="text-[1.1vw] mb-[1.5vw]">Back-end : </h2>
-            <a href="#" target="_blank"><img src="./img/github.png" alt="GitHub" class="icon" width="50px"></a>
+            <a href="#" target="_blank"><img src="./img/github.png" alt="GitHub" class="icon" width="50vw"></a>
         </section>
     </footer>
+    <div id="copyrights" class="z-[100]">© - Fun Code Tournament</div>
 </body>
 </html>
