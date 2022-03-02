@@ -50,10 +50,8 @@ body nav #theme-switcher #dark-theme {
 body #serverinfo {
   font-family: 'Open Sans', sans-serif;
   background: linear-gradient(145deg, #fafafa, #ffffff);
-  -webkit-box-shadow: 1vw 1vw 1vw #d0d0d0,
- -1vw -1vw 1vw #f0f0f0;
-          box-shadow: 1vw 1vw 1vw #d0d0d0,
- -1vw -1vw 1vw #f0f0f0;
+  -webkit-box-shadow: 1vw 1vw 1vw #d0d0d0, -1vw -1vw 1vw #f0f0f0;
+          box-shadow: 1vw 1vw 1vw #d0d0d0, -1vw -1vw 1vw #f0f0f0;
 }
 
 body #serverinfo #activemembers::after {
