@@ -35,6 +35,7 @@ body nav #theme-switcher span {
   height: 2.5vw;
   background-size: cover;
   display: inline-block;
+  cursor: pointer;
 }
 
 body nav #theme-switcher #light-theme {
