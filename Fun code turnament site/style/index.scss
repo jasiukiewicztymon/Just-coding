@@ -4,6 +4,22 @@
 b {
     font-weight: bolder !important;
 }
+.dark {
+    color: #f1f1f1 !important;
+    background: #201f1f !important;
+    nav {
+        a {
+            &:hover {
+                color: #f1f1f1 !important;
+            }
+        }
+    }
+}
+.darkcard {
+    background: linear-gradient(145deg, #1d1c1c, #222121) !important;
+    box-shadow:  -1px -1px 1px #1b1a1a,
+                -1px -1px 1px #252424 !important;
+}
 
 body {
     text-decoration: none;
@@ -70,7 +86,7 @@ body {
     width: 10px;
 }
 ::-webkit-scrollbar-track {
-    background: #ffffff;
+    background: rgb(49, 105, 207);
 }
 ::-webkit-scrollbar-thumb {
     background: rgb(49, 105, 207);

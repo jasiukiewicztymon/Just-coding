@@ -7,6 +7,21 @@ b {
   font-weight: bolder !important;
 }
 
+.dark {
+  color: #f1f1f1 !important;
+  background: #201f1f !important;
+}
+
+.dark nav a:hover {
+  color: #f1f1f1 !important;
+}
+
+.darkcard {
+  background: linear-gradient(145deg, #1d1c1c, #222121) !important;
+  -webkit-box-shadow: -1px -1px 1px #1b1a1a, -1px -1px 1px #252424 !important;
+          box-shadow: -1px -1px 1px #1b1a1a, -1px -1px 1px #252424 !important;
+}
+
 body {
   text-decoration: none;
   -moz-user-select: none;
@@ -76,7 +91,7 @@ body #copyrights {
 }
 
 ::-webkit-scrollbar-track {
-  background: #ffffff;
+  background: #3169cf;
 }
 
 ::-webkit-scrollbar-thumb {
