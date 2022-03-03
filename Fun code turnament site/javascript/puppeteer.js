@@ -35,7 +35,7 @@ function sleep(milliseconds) {
             fs.writeFileSync(name, JSON.stringify(m));
 
             await page.close();
-            sleep(30000);
+            sleep(60000);
         }
     }
     catch (err) {
