@@ -7,20 +7,12 @@ b {
 .dark {
     color: #f1f1f1 !important;
     background: #201f1f !important;
-    nav {
-        a {
-            &:hover {
-                color: #f1f1f1 !important;
-            }
+    a {
+        &:hover {
+            color: #f1f1f1 !important;
         }
     }
 }
-.darkcard {
-    background: linear-gradient(145deg, #1d1c1c, #222121) !important;
-    box-shadow:  1px 1px 1px #1b1a1a,
-                -1px -1px 1px #252424 !important;
-}
-
 body {
     text-decoration: none;
     -moz-user-select: none;
@@ -28,15 +20,17 @@ body {
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    a {
+        &:hover {
+            color: black;
+            transform: translate(0%, -20%);
+        }
+    }
     nav {
         a {
             transition: .5s;
             display: flex;
             text-decoration: none;
-            &:hover {
-                color: black;
-                transform: translate(0%, -20%);
-            }
         }
         #theme-switcher {
             span {
@@ -52,22 +46,6 @@ body {
             }
             #dark-theme {
                 background-image: url("../img/moon.svg");
-            }
-        }
-    }
-    #serverinfo {
-        font-family: 'Open Sans', sans-serif;
-        background: linear-gradient(145deg, #fafafa, #ffffff);
-        box-shadow: 1vw 1vw 1vw #d0d0d0,
-                    -1vw -1vw 1vw #f0f0f0;
-        #activemembers {
-            &::after {
-                content: ' 🟢';
-            }
-        }
-        #totalmembers {
-            &::after {
-                content: ' ✔️';
             }
         }
     }
