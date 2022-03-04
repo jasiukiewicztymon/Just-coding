@@ -5,3 +5,5 @@ fetch('./javascript/serverinfo.json')
     document.querySelector("#totalmembers").textContent = data.total;
     document.querySelector("#activemembers").textContent = data.online;
 })
+
+// switch dark mode

@@ -11,7 +11,6 @@ $(document).ready(function(){
             e.style.filter = 'invert(100%)';
         })
 
-        document.getElementById('serverinfo').classList.add('darkcard');
         document.getElementById('copyrights').classList.add('dark');
     }
 
@@ -24,7 +23,6 @@ $(document).ready(function(){
             e.style.filter = 'invert(100%)';
         })
 
-        document.getElementById('serverinfo').classList.add('darkcard');
         document.getElementById('copyrights').classList.add('dark');
     });
     $('#light-theme').click(() => {
@@ -35,8 +33,7 @@ $(document).ready(function(){
         document.querySelectorAll('.github img').forEach(e => {
             e.style.filter = 'invert(0%)';
         })
-        
-        document.getElementById('serverinfo').classList.remove('darkcard');
+
         document.getElementById('copyrights').classList.remove('dark');
     });
 });
