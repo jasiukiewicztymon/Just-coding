@@ -22,7 +22,7 @@
     <!-- JavaScript -->    
     <script src="./javascript/darkcontact.js"></script>
 </head>
-<body class="grid-cols-12">
+<body class="grid grid-cols-12">
     <nav class="top-0 left-0 flex relative z-[1] col-span-12 h-[100%] w-[97.5vw] mb-[15vw] lg:mb-[12.5vw] lg:mb-[10vw] lg:mb-[2vw]">
         <ul class="grid grid-cols-4 lg:grid-cols-6 w-[100vw] lg:w-[85vw] ml-[5vw] mt-[3vw] text-[3vw] lg:text-[2vw]">
             <li><a href="">🏠 Accueil</a></li>
@@ -36,21 +36,25 @@
             <span id="light-theme" class="absolute none"></span>
         </div>
     </nav>
-    <article class="col-span-12 ml-[5vw] grid-cols-3">
+    <article class="col-span-12 ml-[5vw] grid grid-cols-3">
         <h1 class="text-[2.5vw] col-span-3 text-center mb-[2vw] mt-[1vw]">Si vous avez quelconque doute contactez nous !</h1>
-        <section id="discord-section" class="mt-[1.5vw] grid-span-3 lg:grid-span-1">
-            <a href="https://discord.gg/McGgzaS63M" target="_blank" rel="noopener noreferrer" class="text-[1.5vw] hover:underline hover:decoration-blue-600"><h2>Rejoinez notre discord...</h2></a>
+        <section id="discord-section" class="mt-[3vw] lg:mt-[10vw] w-[90vw] lg:w-auto lg:border-[0.2vw] p-[1.3vw] lg:border-[#201f1f] col-span-3 lg:col-span-1 rounded-[1.5vw]">
+            <h2 class="text-[2.5vw] lg:text-[1.5vw]">Rejoinez notre discord...</h2>
+            <p class="mb-[3vw] mt-[2vw] lg:mt-[1vw] text-[2vw] lg:text-[1.2vw]">Une communauté super avec des membres actifs et ouvert aux question. Le staff fait de son mieux pour organiser des concours</p>
+            <a href="https://discord.gg/McGgzaS63M" target="_blank" rel="noopener noreferrer" class="text-[2vw] lg:text-[1.1vw]"><h2 class="hover:underline hover:decoration-blue-600">Rejoint dès maintenant</h2></a>
         </section>
-        <section id="mail-section" class="mt-[1.5vw] grid-span-3 lg:grid-span-2">
-            <h2 class="text-[1.5vw]">Ou bien écris nous un message ici</h2>
-            <form action="" method="post">
-                <input id="subject" type="text" placeholder="Sujet" name="subject" class="border-[0.3vw] border-[#201f1f] rounded-[1.2vw] p-[1vw] mb-[1vw] mt-[1.5vw] text-black"><br>
-                <textarea id="message" name="message" placeholder="Ton massage" class="border-[0.3vw] border-[#201f1f] mb-[1vw] w-[25vw] h-[20vw] rounded-[1.2vw] p-[1vw] text-black"></textarea><br>
-                <input id="submit" type="submit" name="submit" value="Envoyer">
-            </form>
+        <section id="mail-section" class="mt-[5vw] lg:mt-[1vw] relative h-[25vw] col-span-3 lg:col-span-2">
+            <div class="absolute left-[50%] -translate-x-[50%]">
+                <h2 class="text-[2.5vw] lg:text-[1.5vw]">Ou bien écris nous un message ici</h2>
+                <form action="" method="post" >
+                    <input id="subject" type="text" placeholder="Sujet" name="subject" class="ml-[50%] lg:ml-0 -translate-x-[50%] lg:-translate-x-[0%] border-[0.2vw] border-[#201f1f] rounded-[1.2vw] p-[1vw] mb-[1vw] mt-[1.5vw] text-black w-[30vw] lg:w-[20vw]"><br>
+                    <textarea id="message" name="message" placeholder="Ton massage" class="ml-[50%] lg:ml-0 -translate-x-[50%] lg:-translate-x-[0%] border-[0.2vw] border-[#201f1f] mb-[1vw] w-[25vw] h-[30vw] lg:h-[20vw] rounded-[1.2vw] p-[1vw] text-black w-[40vw] lg:w-[30vw]"></textarea><br>
+                    <input id="submit" type="submit" name="submit" value="Envoyer" class="left-[50%] relative -translate-x-[50%]">
+                </form>
+            </div>
         </section>
     </article>
-    <footer class="relative bottom-[2.5vw] grid grid-cols-5 w-[70vw] l-[50%] transform translate-x-[25%] mt-[20vw] lg:mt-[15vw]">
+    <footer class="relative bottom-[2.5vw] grid grid-cols-5 w-[70vw] l-[50%] transform translate-x-[25%] mt-[40vw] lg:mt-[15vw]">
         <section class="youtube col-span-1 col-start-1">
             <h2 class="text-[2.2vw] lg:text-[1.1vw] mb-[1.5vw]">Notre Youtube : </h2>
             <a href="https://www.youtube.com/channel/UCHWPs-vJg9uGkyIrixR-yCA" target="_blank"><img src="./img/youtube.png" alt="Youtube" class="icon" width="40vw"></a>
