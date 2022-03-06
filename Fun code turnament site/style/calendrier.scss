@@ -1,0 +1,79 @@
+.none {
+    display: none !important;
+}
+b {
+    font-weight: bolder !important;
+}
+.dark {
+    color: #f1f1f1 !important;
+    background: #201f1f !important;
+    a {
+        &:hover {
+            color: #f1f1f1 !important;
+        }
+    }
+}
+body {
+    text-decoration: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    .today-button {
+        border: none;
+        background: #201f1f !important;
+    }
+    a {
+        &:hover {
+            color: black;
+            transform: translate(0%, -20%);
+        }
+    }
+    nav {
+        a {
+            transition: .5s;
+            display: flex;
+            text-decoration: none;
+        }
+        #theme-switcher {
+            span {
+                width: 2.5vw;
+                height: 2.5vw;
+                background-size: cover;
+                display: inline-block;
+                cursor: pointer;
+            }
+            #light-theme {
+                background-image: url("../img/sun.svg");
+                filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+            }
+            #dark-theme {
+                background-image: url("../img/moon.svg");
+            }
+        }
+    }
+    #copyrights {
+        position: fixed;
+        color: rgba(0, 0, 0, 0.5);
+        right: 2vw;
+        font-size: 1vw;
+        bottom: 1vw;
+    }
+}
+// responsible disgn applied for all mobiles disgn
+
+//scrollbar
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: rgb(49, 105, 207);
+}
+::-webkit-scrollbar-thumb {
+    background: rgb(49, 105, 207);
+    transition: .5s;
+    &:hover {
+        background: rgb(22, 78, 201);
+    }
+}
