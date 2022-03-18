@@ -4,35 +4,111 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
+using System.Collections;
 
 namespace PacMan
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Printmenu()
         {
-            void Printmenu()
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.SetCursorPosition(20, 1);
+            Console.WriteLine("Welcome to PacMan");
+            Console.SetCursorPosition(27, 3);
+            Console.WriteLine("Play\n\n");
+            Console.SetCursorPosition(15, 4);
+            Console.WriteLine("[ smash the space to play ]");
+            ConsoleKeyInfo _key;
+            do
             {
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.SetCursorPosition(20, 1);
-                Console.WriteLine("Welcome to PacMan");
-                Console.SetCursorPosition(27, 3);
-                Console.WriteLine("Play\n\n");
-                Console.SetCursorPosition(15, 4);
-                Console.WriteLine("[ smash the space to play ]");
-                ConsoleKeyInfo _key;
+                _key = Console.ReadKey();
+            } while (_key.Key != ConsoleKey.Spacebar);
+        }
+
+        public static void PrintPlayer(int x, int y, int mapx, int mapy, char p)
+        {
+            Console.SetCursorPosition(x + mapx, y + mapy);
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.Write(p);
+        }
+
+        class Th
+        {
+            public string[] Fmap;
+            public int Fpos_y_player, Fpos_x_player, Fx_print, Fy_print;
+            public char Fplayer;
+            public int[,] Fm_pos;
+            public char[] Fmonsters;
+            public void PlayerMove()
+            {
+                ConsoleKey Fmove;
+
                 do
                 {
-                    _key = Console.ReadKey();
-                } while (_key.Key != ConsoleKey.Spacebar);
-            }
+                    Fmove = Console.ReadKey(true).Key;
 
-            void PrintPlayer(int x, int y, int mapx, int mapy, char p)
-            {
-                Console.SetCursorPosition(x + mapx, y + mapy);
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.Write(p);
+                    switch (Fmove)
+                    {
+                        case ConsoleKey.UpArrow:
+                        case ConsoleKey.W:
+                            if (Fmap[Fpos_y_player - 1][Fpos_x_player] != '█')
+                            {
+                                Console.SetCursorPosition(Fpos_x_player + Fx_print, Fpos_y_player + Fy_print);
+                                Console.Write(' ');
+                                Fpos_y_player--;
+                                PrintPlayer(Fpos_x_player, Fpos_y_player, Fx_print, Fy_print, Fplayer);
+                            }
+                            break;
+                        case ConsoleKey.DownArrow:
+                        case ConsoleKey.S:
+                            if (Fmap[Fpos_y_player + 1][Fpos_x_player] != '█' && (Fpos_y_player + 1 != 7 || (Fpos_x_player != 29 && Fpos_x_player != 26 && Fpos_x_player != 27 && Fpos_x_player != 28)))
+                            {
+                                Console.SetCursorPosition(Fpos_x_player + Fx_print, Fpos_y_player + Fy_print);
+                                Console.Write(' ');
+                                Fpos_y_player++;
+                                PrintPlayer(Fpos_x_player, Fpos_y_player, Fx_print, Fy_print, Fplayer);
+                            }
+                            break;
+                        case ConsoleKey.LeftArrow:
+                        case ConsoleKey.A:
+                            if (Fmap[Fpos_y_player][Fpos_x_player - 1] != '█')
+                            {
+                                Console.SetCursorPosition(Fpos_x_player + Fx_print, Fpos_y_player + Fy_print);
+                                Console.Write(' ');
+                                if (Fpos_x_player == 1)
+                                    Fpos_x_player = Fmap[0].Length - 2;
+                                else
+                                    Fpos_x_player--;
+                                PrintPlayer(Fpos_x_player, Fpos_y_player, Fx_print, Fy_print, Fplayer);
+                            }
+                            break;
+                        case ConsoleKey.RightArrow:
+                        case ConsoleKey.D:
+                            if (Fmap[Fpos_y_player][Fpos_x_player + 1] != '█')
+                            {
+                                Console.SetCursorPosition(Fpos_x_player + Fx_print, Fpos_y_player + Fy_print);
+                                Console.Write(' ');
+                                if (Fpos_x_player == Fmap[0].Length - 2)
+                                    Fpos_x_player = 1;
+                                else
+                                    Fpos_x_player++;
+                                PrintPlayer(Fpos_x_player, Fpos_y_player, Fx_print, Fy_print, Fplayer);
+                            }
+                            break;
+                    }
+
+                    Thread.Sleep(10);
+                } while ((Fpos_x_player != Fm_pos[0, 0] && Fpos_y_player != Fm_pos[0, 1]) || (Fpos_x_player != Fm_pos[1, 0] && Fpos_y_player != Fm_pos[1, 1]) || (Fpos_x_player != Fm_pos[2, 0] && Fpos_y_player != Fm_pos[2, 1]) && Fmove != ConsoleKey.Escape);
             }
+            public void EnemiesMove()
+            {
+                // sleep 100ms
+            }
+        }
+        static void Main(string[] args)
+        {
+            
 
             const int x_print = 5, y_print = 3;
             int pos_x_player = 28, pos_y_player = 5;
@@ -74,65 +150,21 @@ namespace PacMan
                 Console.Write(map[i]);
             }
 
-            ConsoleKey move;
             PrintPlayer(pos_x_player, pos_y_player, x_print, y_print, player);
 
-            do
-            {
-                move = Console.ReadKey(true).Key;
+            Th t = new Th();
+            t.Fmap = map;
+            t.Fpos_y_player = pos_y_player;
+            t.Fpos_x_player = pos_x_player;
+            t.Fx_print = x_print;
+            t.Fy_print = y_print;
+            t.Fplayer = player;
+            t.Fm_pos = m_pos;
+            t.Fmonsters = monsters;
 
-                switch (move)
-                {
-                    case ConsoleKey.UpArrow:
-                    case ConsoleKey.W:
-                        if (map[pos_y_player - 1][pos_x_player] != '█')
-                        {
-                            Console.SetCursorPosition(pos_x_player + x_print, pos_y_player + y_print);
-                            Console.Write(' ');
-                            pos_y_player--;
-                            PrintPlayer(pos_x_player, pos_y_player, x_print, y_print, player);
-                        }
-                        break;
-                    case ConsoleKey.DownArrow:
-                    case ConsoleKey.S:
-                        if (map[pos_y_player + 1][pos_x_player] != '█' && (pos_y_player + 1 != 7 || (pos_x_player != 29 && pos_x_player != 26 && pos_x_player != 27 && pos_x_player != 28)))
-                        {
-                            Console.SetCursorPosition(pos_x_player + x_print, pos_y_player + y_print);
-                            Console.Write(' ');
-                            pos_y_player++;
-                            PrintPlayer(pos_x_player, pos_y_player, x_print, y_print, player);
-                        }
-                        break;
-                    case ConsoleKey.LeftArrow:
-                    case ConsoleKey.A:
-                        if (map[pos_y_player][pos_x_player - 1] != '█')
-                        {
-                            Console.SetCursorPosition(pos_x_player + x_print, pos_y_player + y_print);
-                            Console.Write(' ');
-                            if (pos_x_player == 1)
-                                pos_x_player = map[0].Length - 2;
-                            else
-                                pos_x_player--;
-                            PrintPlayer(pos_x_player, pos_y_player, x_print, y_print, player);
-                        }
-                        break;
-                    case ConsoleKey.RightArrow:
-                    case ConsoleKey.D:
-                        if (map[pos_y_player][pos_x_player + 1] != '█')
-                        {
-                            Console.SetCursorPosition(pos_x_player + x_print, pos_y_player + y_print);
-                            Console.Write(' ');
-                            if (pos_x_player == map[0].Length - 2)
-                                pos_x_player = 1;
-                            else
-                                pos_x_player++;
-                            PrintPlayer(pos_x_player, pos_y_player, x_print, y_print, player);
-                        }
-                        break;
-                }
+            Thread tPlayerMove = new Thread(new ThreadStart(t.PlayerMove));
 
-                Thread.Sleep(10);
-            } while ((pos_x_player != m_pos[0, 0] && pos_y_player != m_pos[0, 1]) || (pos_x_player != m_pos[1, 0] && pos_y_player != m_pos[1, 1]) || (pos_x_player != m_pos[2, 0] && pos_y_player != m_pos[2, 1]));
+            tPlayerMove.Start();
 
             Console.ReadKey();
         }
