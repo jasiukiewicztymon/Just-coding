@@ -23,7 +23,7 @@ namespace PacMan
             Console.WriteLine("Play\n\n");
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.SetCursorPosition(15, 4);
-            Console.WriteLine("[ smash the space to play ]");
+            Console.WriteLine("[ SMASH THE SPACE TO PLAY ]");
             ConsoleKeyInfo _key;
             do
             {
@@ -61,6 +61,7 @@ namespace PacMan
 
                 do
                 {
+                    Console.CursorVisible = false;
                     if (j < 30)
                         Fplayer = 'o';
                     else
@@ -146,16 +147,16 @@ namespace PacMan
                 Console.WriteLine("Mouvements:");
                 Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.SetCursorPosition(Fx_print + Fmap[0].Length + 4, Fy_print + 6);
-                Console.WriteLine("W | Up arrow");
+                Console.WriteLine("↑ W | Up arrow");
                 Console.ForegroundColor = ConsoleColor.DarkBlue;
                 Console.SetCursorPosition(Fx_print + Fmap[0].Length + 4, Fy_print + 7);
-                Console.WriteLine("A | Left arrow");
+                Console.WriteLine("← A | Left arrow");
                 Console.ForegroundColor = ConsoleColor.Blue;
                 Console.SetCursorPosition(Fx_print + Fmap[0].Length + 4, Fy_print + 8);
-                Console.WriteLine("S | Down arrow");
+                Console.WriteLine("↓ S | Down arrow");
                 Console.ForegroundColor = ConsoleColor.DarkMagenta;
                 Console.SetCursorPosition(Fx_print + Fmap[0].Length + 4, Fy_print + 9);
-                Console.WriteLine("D | Right arrow");
+                Console.WriteLine("→ D | Right arrow");
                 Console.ForegroundColor = ConsoleColor.Magenta;
                 Console.SetCursorPosition(Fx_print + Fmap[0].Length + 4, Fy_print + 11);
                 Console.WriteLine("Made by titi_2115");
