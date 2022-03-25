@@ -40,6 +40,7 @@ namespace PacMan
             public char Fplayer;
             public int[,] Fm_pos;
             public char[] Fmonsters;
+            bool open = true;
             public void PlayerMove()
             {
                 ConsoleKey Fmove;
@@ -57,17 +58,19 @@ namespace PacMan
                                 Console.SetCursorPosition(Fpos_x_player + Fx_print, Fpos_y_player + Fy_print);
                                 Console.Write(' ');
                                 Fpos_y_player--;
-                                PrintPlayer(Fpos_x_player, Fpos_y_player, Fx_print, Fy_print, Fplayer);
+                                PrintPlayer(Fpos_x_player, Fpos_y_player, Fx_print, Fy_print, 'u');
+                                Fplayer = 'u';
                             }
                             break;
                         case ConsoleKey.DownArrow:
                         case ConsoleKey.S:
-                            if (Fmap[Fpos_y_player + 1][Fpos_x_player] != '█' && (Fpos_y_player + 1 != 7 || (Fpos_x_player != 29 && Fpos_x_player != 26 && Fpos_x_player != 27 && Fpos_x_player != 28)))
+                            if (Fmap[Fpos_y_player + 1][Fpos_x_player] != '█' && Fmap[Fpos_y_player + 1][Fpos_x_player] != '▒')
                             {
                                 Console.SetCursorPosition(Fpos_x_player + Fx_print, Fpos_y_player + Fy_print);
                                 Console.Write(' ');
                                 Fpos_y_player++;
-                                PrintPlayer(Fpos_x_player, Fpos_y_player, Fx_print, Fy_print, Fplayer);
+                                PrintPlayer(Fpos_x_player, Fpos_y_player, Fx_print, Fy_print, 'n');
+                                Fplayer = 'n';
                             }
                             break;
                         case ConsoleKey.LeftArrow:
@@ -80,7 +83,8 @@ namespace PacMan
                                     Fpos_x_player = Fmap[0].Length - 2;
                                 else
                                     Fpos_x_player--;
-                                PrintPlayer(Fpos_x_player, Fpos_y_player, Fx_print, Fy_print, Fplayer);
+                                PrintPlayer(Fpos_x_player, Fpos_y_player, Fx_print, Fy_print, '>');
+                                Fplayer = '>';
                             }
                             break;
                         case ConsoleKey.RightArrow:
@@ -93,7 +97,8 @@ namespace PacMan
                                     Fpos_x_player = 1;
                                 else
                                     Fpos_x_player++;
-                                PrintPlayer(Fpos_x_player, Fpos_y_player, Fx_print, Fy_print, Fplayer);
+                                PrintPlayer(Fpos_x_player, Fpos_y_player, Fx_print, Fy_print, '<');
+                                Fplayer = '<';
                             }
                             break;
                     }
@@ -105,35 +110,59 @@ namespace PacMan
             {
                 // sleep 100ms
             }
+            public void ChangePackMan()
+            {
+                while (true)
+                {
+                    Thread.Sleep(200);
+                    if (open)
+                    {
+                        PrintPlayer(Fpos_x_player, Fpos_y_player, Fx_print, Fy_print, 'o');
+                        open = false;
+                    }
+                    else if (Fmap[Fpos_y_player][Fpos_x_player] != '█')
+                    {
+                        PrintPlayer(Fpos_x_player, Fpos_y_player, Fx_print, Fy_print, Fplayer);
+                        open = true;
+                    }
+                }
+            }
         }
         static void Main(string[] args)
         {
-            
-
             const int x_print = 5, y_print = 3;
-            int pos_x_player = 28, pos_y_player = 5;
+            int pos_x_player = 18, pos_y_player = 4;
 
             Console.CursorVisible = false;
             string[] map = {
-                " ██████████████████████████████████████████████████████ ",
-                " ██                   ████████████                   ██ ",
-                " ██   ████   ██████   ████████████   ██████   ████   ██ ",
-                " ██   ████   ██████   ████████████   ██████   ████   ██ ",
-                " ██                                                  ██ ",
-                " ██                                                  ██ ",
-                " ██   ███████                              ███████   ██ ",
-                "                      ████    ████                      ",
-                " ██                   ██        ██                   ██ ",
-                "                      ████████████                      ",
-                " ██   ███████                              ███████   ██ ",
-                " ██                                                  ██ ",
-                " ██   ████   ██████   ████████████   ██████   ████   ██ ",
-                " ██   ████   ██████   ████████████   ██████   ████   ██ ",
-                " ██                   ████████████                   ██ ",
-                " ██████████████████████████████████████████████████████ "
+                " ███████████████████████ ",
+                " █          █          █ ",
+                " █ ███ ████ █ ████ ███ █ ",
+                " █ ███ ████ █ ████ ███ █ ",
+                " █                     █ ",
+                " █ ███ █ ███████ █ ███ █ ",
+                " █     █ ███████ █     █ ",
+                " █████ █    █    █ █████ ",
+                " █████ ████ █ ████ █████ ",
+                " █████ █         █ █████ ",
+                " █████ █ ███▒███ █ █████ ",
+                "         █     █         ",
+                " █████ █ ███████ █ █████ ",
+                " █████ █         █ █████ ",
+                " █████ █ ███████ █ █████ ",
+                " █████ █ ███████ █ █████ ",
+                " █          █          █ ",
+                " █ ███ ████ █ ████ ███ █ ",
+                " █   █             █   █ ",
+                " ███ █ █ ███████ █ █ ███ ",
+                " █     █    █    █     █ ",
+                " █ ████████ █ ████████ █ ",
+                " █ ████████ █ ████████ █ ",
+                " █                     █ ",
+                " ███████████████████████ " 
             };
 
-            const char player = 'c';
+            char player = 'c';
             const char point = 'ò';
 
             char[] monsters = { 'n' , 'n', 'n' };
@@ -163,8 +192,10 @@ namespace PacMan
             t.Fmonsters = monsters;
 
             Thread tPlayerMove = new Thread(new ThreadStart(t.PlayerMove));
+            Thread tChange = new Thread(new ThreadStart(t.ChangePackMan));
 
             tPlayerMove.Start();
+            tChange.Start();
 
             Console.ReadKey();
         }
