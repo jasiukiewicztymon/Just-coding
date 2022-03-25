@@ -23,7 +23,7 @@ namespace PacMan
             Console.WriteLine("Play\n\n");
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.SetCursorPosition(15, 4);
-            Console.WriteLine("[ smash the space to play ]");
+            Console.WriteLine("[ SMASH THE SPACE TO PLAY ]");
             ConsoleKeyInfo _key;
             do
             {
@@ -37,7 +37,80 @@ namespace PacMan
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Write(p);
         }
+        public class OP
+        {
+            public string[] Fmap;
+            public int Fpos_y_player, Fpos_x_player, Fx_print, Fy_print;
 
+            bool OPMan = false;
+            public int x, y;
+
+            public char Fplayer;
+
+            public void OPpoint()
+            {
+                ConsoleColor[] colors = { ConsoleColor.Red, ConsoleColor.DarkYellow, ConsoleColor.Yellow, ConsoleColor.Green, ConsoleColor.DarkGreen, ConsoleColor.DarkBlue, ConsoleColor.Blue, ConsoleColor.DarkMagenta, ConsoleColor.Magenta };
+
+                Random rd = new Random();
+
+                do
+                {
+                    x = rd.Next(1, Fmap[0].Length - 1);
+                    y = rd.Next(1, Fmap.Length - 1);
+                } while (Fmap[y][x] != ' ' || y == 11);
+
+                Console.SetCursorPosition(x + Fx_print, y + Fy_print);
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write('ò');
+
+                while (true)
+                {
+                    if (!OPMan)
+                    {
+                        if (x == Fpos_x_player && y == Fpos_y_player)
+                        {
+                            OPMan = true;
+                        }
+                    }
+                    else
+                    {
+                        string texte = $"OPMan: True  ";
+
+                        for (int i = 0; i < 50; i++)
+                        {
+                            for (int j = 0; j < texte.Length; j++)
+                            {
+                                int index = i + j;
+                                while (index > colors.Length - 1)
+                                {
+                                    index -= colors.Length;
+                                }
+                                Console.ForegroundColor = colors[index];
+                                Console.SetCursorPosition(Fx_print + Fmap[0].Length + 4 + j, Fy_print + 1);
+                                Console.Write(texte[j]);
+                            }
+                            Thread.Sleep(100);
+                        }
+
+                        Console.ForegroundColor = ConsoleColor.Gray;
+                        Console.SetCursorPosition(Fx_print + Fmap[0].Length + 4, Fy_print + 1);
+                        Console.WriteLine("OPMan: False");
+
+                        OPMan = false;
+
+                        do
+                        {
+                            x = rd.Next(1, Fmap[0].Length - 1);
+                            y = rd.Next(1, Fmap.Length - 1);
+                        } while (Fmap[y][x] != ' ' || y == 11);
+
+                        Console.SetCursorPosition(x + Fx_print, y + Fy_print);
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.Write('ò');
+                    }
+                }
+            }
+        }
         public class Th
         {
             public string[] Fmap;
@@ -45,18 +118,50 @@ namespace PacMan
             public char Fplayer;
             public int[,] Fm_pos;
             public char[] Fmonsters;
-            bool open = true;
 
             // Effects
             bool OPMan = false;
             long points = 0;
 
+            public int x, y;
+
             public void PlayerMove()
             {
-                ConsoleKey Fmove;
+                ConsoleKey Fmove = ConsoleKey.Q;
+
+                int j = 0;
+                char oldPlayer = Fplayer;
+
+                OP op = new OP();
+                op.Fmap = Fmap;
+                op.Fy_print = Fy_print;
+                op.Fx_print = Fx_print;
+                op.Fpos_y_player = Fpos_y_player;
+                op.Fpos_x_player = Fpos_x_player;
+                op.Fplayer = Fplayer;
+                Thread tParams = new Thread(new ThreadStart(op.OPpoint));
+
+                tParams.Start();
 
                 do
                 {
+                    op.Fpos_y_player = Fpos_y_player;
+                    op.Fpos_x_player = Fpos_x_player;
+                    Console.CursorVisible = false;
+                    if (j < 30)
+                        Fplayer = 'o';
+                    else
+                        Fplayer = oldPlayer;
+
+                    if (j == 60)
+                        j = 0;
+                    j++;
+                    PrintPlayer(Fpos_x_player, Fpos_y_player, Fx_print, Fy_print, Fplayer);
+                    Thread.Sleep(20);
+
+                    if (!Console.KeyAvailable)
+                        continue;
+
                     Fmove = Console.ReadKey(true).Key;
 
                     switch (Fmove)
@@ -68,8 +173,7 @@ namespace PacMan
                                 Console.SetCursorPosition(Fpos_x_player + Fx_print, Fpos_y_player + Fy_print);
                                 Console.Write(' ');
                                 Fpos_y_player--;
-                                PrintPlayer(Fpos_x_player, Fpos_y_player, Fx_print, Fy_print, 'u');
-                                Fplayer = 'u';
+                                oldPlayer = Fplayer = 'u';
                             }
                             break;
                         case ConsoleKey.DownArrow:
@@ -79,8 +183,7 @@ namespace PacMan
                                 Console.SetCursorPosition(Fpos_x_player + Fx_print, Fpos_y_player + Fy_print);
                                 Console.Write(' ');
                                 Fpos_y_player++;
-                                PrintPlayer(Fpos_x_player, Fpos_y_player, Fx_print, Fy_print, 'n');
-                                Fplayer = 'n';
+                                oldPlayer = Fplayer = 'n';
                             }
                             break;
                         case ConsoleKey.LeftArrow:
@@ -93,8 +196,7 @@ namespace PacMan
                                     Fpos_x_player = Fmap[0].Length - 2;
                                 else
                                     Fpos_x_player--;
-                                PrintPlayer(Fpos_x_player, Fpos_y_player, Fx_print, Fy_print, '>');
-                                Fplayer = '>';
+                                oldPlayer = Fplayer = '>';
                             }
                             break;
                         case ConsoleKey.RightArrow:
@@ -107,13 +209,10 @@ namespace PacMan
                                     Fpos_x_player = 1;
                                 else
                                     Fpos_x_player++;
-                                PrintPlayer(Fpos_x_player, Fpos_y_player, Fx_print, Fy_print, '<');
-                                Fplayer = '<';
+                                oldPlayer = Fplayer = '<';
                             }
                             break;
                     }
-                    Thread.Sleep(10);
-                    
                 } while ((Fpos_x_player != Fm_pos[0, 0] && Fpos_y_player != Fm_pos[0, 1]) || (Fpos_x_player != Fm_pos[1, 0] && Fpos_y_player != Fm_pos[1, 1]) || (Fpos_x_player != Fm_pos[2, 0] && Fpos_y_player != Fm_pos[2, 1]) && Fmove != ConsoleKey.Escape);
             }
             public void EnemiesMove()
@@ -134,39 +233,19 @@ namespace PacMan
                 Console.WriteLine("Mouvements:");
                 Console.ForegroundColor = ConsoleColor.DarkGreen;
                 Console.SetCursorPosition(Fx_print + Fmap[0].Length + 4, Fy_print + 6);
-                Console.WriteLine("W | Up arrow");
+                Console.WriteLine("↑ W | Up arrow");
                 Console.ForegroundColor = ConsoleColor.DarkBlue;
                 Console.SetCursorPosition(Fx_print + Fmap[0].Length + 4, Fy_print + 7);
-                Console.WriteLine("A | Left arrow");
+                Console.WriteLine("← A | Left arrow");
                 Console.ForegroundColor = ConsoleColor.Blue;
                 Console.SetCursorPosition(Fx_print + Fmap[0].Length + 4, Fy_print + 8);
-                Console.WriteLine("S | Down arrow");
+                Console.WriteLine("↓ S | Down arrow");
                 Console.ForegroundColor = ConsoleColor.DarkMagenta;
                 Console.SetCursorPosition(Fx_print + Fmap[0].Length + 4, Fy_print + 9);
-                Console.WriteLine("D | Right arrow");
+                Console.WriteLine("→ D | Right arrow");
                 Console.ForegroundColor = ConsoleColor.Magenta;
                 Console.SetCursorPosition(Fx_print + Fmap[0].Length + 4, Fy_print + 11);
                 Console.WriteLine("Made by titi_2115");
-            } 
-            public void ChangePackMan()
-            {
-                while (true)
-                {
-                    Thread.Sleep(250);
-                    if (Fmap[Fpos_y_player][Fpos_x_player] != '█')
-                    {
-                        if (open)
-                        {
-                            PrintPlayer(Fpos_x_player, Fpos_y_player, Fx_print, Fy_print, 'o');
-                            open = false;
-                        }
-                        else
-                        {
-                            PrintPlayer(Fpos_x_player, Fpos_y_player, Fx_print, Fy_print, Fplayer);
-                            open = true;
-                        }
-                    }
-                }
             }
         }
 
@@ -206,7 +285,6 @@ namespace PacMan
             };
 
             char player = 'c';
-            const char point = 'ò';
 
             char[] monsters = { 'n', 'n', 'n' };
             int[,] m_pos = { { 0, 0 }, { 0, 0 }, { 0, 0 } };
@@ -239,13 +317,8 @@ namespace PacMan
             t.Fm_pos = m_pos;
             t.Fmonsters = monsters;
 
-            Thread tPlayerMove = new Thread(new ThreadStart(t.PlayerMove));
-            Thread tChange = new Thread(new ThreadStart(t.ChangePackMan));
-            Thread tParams = new Thread(new ThreadStart(t.WriteParam));
-
-            tPlayerMove.Start();
-            tChange.Start();
-            tParams.Start();
+            t.WriteParam();
+            t.PlayerMove();
 
             Console.ReadKey(true);
         }
