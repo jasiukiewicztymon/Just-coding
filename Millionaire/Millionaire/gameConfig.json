@@ -1,0 +1,30 @@
+{
+  "Games": [
+    {
+      "Theme": "Football",  
+      "Questions": [
+        {
+          "Question": "Which clubs plays in the El clasico?",
+          "Answers": [
+            {
+              "Answer": "Barcelone & Real Betise",
+              "Correct": false
+            },
+            {
+              "Answer": "Barcelone & Real Madride",
+              "Correct": true
+            },
+            {
+              "Answer": "Valencia & Real Betise",
+              "Correct": false
+            },
+            {
+              "Answer": "Atletico Madride & Real Madride",
+              "Correct": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

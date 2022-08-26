@@ -1,0 +1,14 @@
+C:\Users\JasiukiewiczT\Downloads\Millionaire\Millionaire\bin\Debug\Millionaire.exe.config
+C:\Users\JasiukiewiczT\Downloads\Millionaire\Millionaire\bin\Debug\Millionaire.exe
+C:\Users\JasiukiewiczT\Downloads\Millionaire\Millionaire\bin\Debug\Millionaire.pdb
+C:\Users\JasiukiewiczT\Downloads\Millionaire\Millionaire\bin\Debug\Newtonsoft.Json.dll
+C:\Users\JasiukiewiczT\Downloads\Millionaire\Millionaire\bin\Debug\Newtonsoft.Json.xml
+C:\Users\JasiukiewiczT\Downloads\Millionaire\Millionaire\obj\Debug\Millionaire.csproj.AssemblyReference.cache
+C:\Users\JasiukiewiczT\Downloads\Millionaire\Millionaire\obj\Debug\Millionaire.csproj.SuggestedBindingRedirects.cache
+C:\Users\JasiukiewiczT\Downloads\Millionaire\Millionaire\obj\Debug\Millionaire.Form1.resources
+C:\Users\JasiukiewiczT\Downloads\Millionaire\Millionaire\obj\Debug\Millionaire.Properties.Resources.resources
+C:\Users\JasiukiewiczT\Downloads\Millionaire\Millionaire\obj\Debug\Millionaire.csproj.GenerateResource.cache
+C:\Users\JasiukiewiczT\Downloads\Millionaire\Millionaire\obj\Debug\Millionaire.csproj.CoreCompileInputs.cache
+C:\Users\JasiukiewiczT\Downloads\Millionaire\Millionaire\obj\Debug\Millionaire.csproj.CopyComplete
+C:\Users\JasiukiewiczT\Downloads\Millionaire\Millionaire\obj\Debug\Millionaire.exe
+C:\Users\JasiukiewiczT\Downloads\Millionaire\Millionaire\obj\Debug\Millionaire.pdb
